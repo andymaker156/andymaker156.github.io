@@ -1,0 +1,49 @@
+
+.well{
+    font-family:Monotype Corsiva;
+    font-size:40px;
+    text-align:center;
+    vertical-align: middle;
+}
+
+.card{
+  box-shadow:0 4px 8px;
+  translation:0.3s;
+  width:800px;
+  height:600px;
+  background-color:#90C695;
+  opacity:0.7;
+  text-align:center;
+  vertical-align: middle;
+  border-radius:15px;
+  position: relative;
+  display: inline-block;
+}
+.card .text{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;        
+    text-align: center;
+    top: 10%; /* Adjust this value to move the positioned div up and down */
+    background: rgba(0, 0, 0, 0.8);
+    font-family: Arial,sans-serif;
+    color: #fff;
+    width: 80%; /* Set the width of the positioned div */
+}
+.card:hover{
+box-shadow:0 8px 16px ;
+}
+#font{
+font-size:30px;
+opacity:0.7;
+}
+.fa:hover{
+opacity:1.0;
+}
+.quote,.author{
+padding:20px;
+font-family:Monotype Corsiva;
+font-size:36px;
+}

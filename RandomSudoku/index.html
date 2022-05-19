@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Sudoku</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.min.css">
+    <meta name="viewport" content="width=400, user-scalable=no">
+</head>
+<body>
+
+<div class="centered-box">
+<header>
+    <h1>Sudoku</h1>
+</header><div class="sudoku-game">
+    <div class="sudoku-header">
+        <div class="sudoku-intro">Select a level to start the game!</div>
+        <div class="sudoku-controls"> <button type="button" class="btn btn-default btn-back" title="Change difficulty">&#9001;</button>
+<div class="btn-group btn-control-group" role="group">
+    <button type="button" class="btn btn-default btn-hint" title="Ask for a hint">Hint</button>
+    <button type="button" class="btn btn-default btn-clear" title="Clear your solutions">Clear</button>
+    <button type="button" class="btn btn-default btn-solve" title="Solve the puzzle">Solve</button>
+</div></div>
+    </div>
+    <div class="box-effect">
+        <div class="flipper">
+            <div class="front">
+                <div class="dropdown-group dropdown-difficulty">
+                    <ul class="dropdown-menu" role="menu">
+                        <li tabindex="0" role="menuitem" difficulty="beginner">Beginner</li>
+                        <li tabindex="0" role="menuitem" difficulty="easy">Easy</li>
+                        <li tabindex="0" role="menuitem" difficulty="medium">Medium</li>
+                        <li tabindex="0" role="menuitem" difficulty="hard">Hard</li>
+                        <li tabindex="0" role="menuitem" difficulty="expert">Expert</li>
+                    </ul>
+                </div>            </div>
+             <div class="back">
+                <div class="sudoku-container"></div>            </div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="sudoku-timer"></div></div>
+</div>
+
+<script type="text/javascript" defer src="js/app.min.js"></script>
+</body>
+</html>
