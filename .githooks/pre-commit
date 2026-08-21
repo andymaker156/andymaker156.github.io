@@ -1,0 +1,34 @@
+#!/bin/sh
+# Refuse to commit as anyone but this repo's own account.
+#
+# GitHub maps commits to accounts by author email, so a commit made with the
+# wrong email is permanently attributed to the wrong account and shows up in
+# this repo's contributor list. The identity normally comes from an includeIf
+# rule in ~/.gitconfig that matches on the remote URL -- which cannot match
+# before `git remote add`, so a brand-new repo silently falls back to the
+# global default. This hook is the backstop.
+
+expected='61553355+andymaker156@users.noreply.github.com'
+
+author=$(git var GIT_AUTHOR_IDENT)
+committer=$(git var GIT_COMMITTER_IDENT)
+
+for ident in "$author" "$committer"; do
+	case "$ident" in
+	*"<$expected>"*) ;;
+	*)
+		cat >&2 <<MSG
+pre-commit: wrong commit identity.
+
+  author:    $author
+  committer: $committer
+
+Every commit here must use <$expected>. Fix it with:
+
+  git config user.name  andymaker156
+  git config user.email $expected
+MSG
+		exit 1
+		;;
+	esac
+done
